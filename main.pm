@@ -48,14 +48,12 @@ $ensembldb_conn->load_registry_from_db(
 # get a slice adaptor for the human core database
 my $slice_adaptor = $ensembldb_conn->get_adaptor( 'Human', 'Core', 'Slice' );
 
-print "Input: $chromosome $start-$end\n";
-
 # Obtain a slice covering the chromosome x from $start to $end 
 my $slice = $slice_adaptor->fetch_by_region( 'chromosome', $chromosome, $start, $end, '1', $fromGenomeVersion );
 
 my $projection = $slice->project('chromosome', $toGenomeVersion);
 
-print "The region $chromosome:$start..$end in $fromGenomeVersion corresponds to ".scalar @$projection." regions in $toGenomeVersion:\n";
+print "The region $chromosome:$start..$end in $fromGenomeVersion has ".scalar @$projection." regions in $toGenomeVersion:\n";
 
 foreach my $segment (@$projection) {
     my $name = $segment->to_Slice()->seq_region_name();
