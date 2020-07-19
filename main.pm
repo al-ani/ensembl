@@ -26,8 +26,8 @@ Usage:
     -c  	Chromosome name, is number between 1 - 22 or x and y (by default 10)
     -s  	Chromosome region start (by default 25000)
     -e  	Chromosome region end (by default 30000)
-    -e  	Genome Version such as GRCh37 and GRCh38 (by default GRCh38)
-    -e  	Genome Version such as GRCh37 and GRCh38 (by default GRCh37)
+    -fgv  	Genome Version such as GRCh37 and GRCh38 (by default GRCh38)
+    -tgv  	Genome Version such as GRCh37 and GRCh38 (by default GRCh37)
     --help / -h  for help.
 Example usage:
   main.pm 
