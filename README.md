@@ -17,7 +17,7 @@ The code requires the Ensembl library are installed, as described in the install
 
 
 # Alternative
-The alternative methond used RESTful API
+The alternative method uses RESTful API
 "Requirement:" Required to install HTTP::Tiny and JSON library
 For HTTP::Tiny https://metacpan.org/pod/HTTP::Tiny
 For JSON https://metacpan.org/pod/JSON
