@@ -1,5 +1,5 @@
 # Prerequisites 
-The script requires the [Ensembl Api Reference](http://grch37.rest.ensembl.org/) library installed
+The script requires the [Ensembl Api Reference](http://rest.ensembl.org/) library installed
 
 # Usage
     perl main.pm [-c chromosome] [-s start] [-e end] [-fgv fromGenomeVersion] [-tgv toGenomeVersion]
@@ -15,7 +15,7 @@ The script requires the [Ensembl Api Reference](http://grch37.rest.ensembl.org/)
 
 
 # Alternative Method
-The alternative method uses RESTful API 
+The alternative method uses REST API 
 **Prerequisites:**  The script requires [HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny) [JSON](https://metacpan.org/pod/JSON) libraries installed
 
 
