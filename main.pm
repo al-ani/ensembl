@@ -3,7 +3,7 @@ use Bio::EnsEMBL::Registry;
 use Getopt::Long;
 
 
-my $chromosome = 1;
+my $chromosome = 10;
 my $start = 25000;
 my $end = 30000;
 my $fromGenomeVersion = "GRCh38";
@@ -23,7 +23,7 @@ if ( !GetOptions( 'c=s' => \$chromosome,
 print <<HELP;
 Usage:
   main.pm  -c chromosome - start -e end [-fgv from_genome_version] [-tgv to_genome_version]
-    -c  	Chromosome name, could be number between 1 - 22, x and y (by default 1)
+    -c  	Chromosome name, is number between 1 - 22 or x and y (by default 10)
     -s  	Chromosome region start (by default 25000)
     -e  	Chromosome region end (by default 30000)
     -e  	Genome Version such as GRCh37 and GRCh38 (by default GRCh38)
@@ -56,8 +56,8 @@ my $projection = $slice->project('chromosome', $toGenomeVersion);
 print "The region $chromosome:$start..$end in $fromGenomeVersion has ".scalar @$projection." regions in $toGenomeVersion:\n";
 
 foreach my $segment (@$projection) {
-    my $name = $segment->to_Slice()->seq_region_name();
-    my $start   = $segment->to_Slice()->start();
-    my $end     = $segment->to_Slice()->end();
-    print (($start + $segment->from_start() - 1), '..', ($start + $segment->from_end() - 1), ' -> ', "$name:$start..$end\n" );
+    my $to_name = $segment->to_Slice()->seq_region_name();
+    my $to_start   = $segment->to_Slice()->start();
+    my $to_end     = $segment->to_Slice()->end();
+    print (($fromGenomeVersion,':',$chromosome,':', $start + $segment->from_start() - 1), '..', ($start + $segment->from_end() - 1), ' -> ', "$toGenomeVersion:$to_name:$to_start..$to_end\n" );
 }

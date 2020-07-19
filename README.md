@@ -4,7 +4,13 @@ The code requires the Ensembl library are installed, as described in the install
 
 # Usage
 perl main.pm [-c chromosome] [-s start] [-e end] [-fgv fromGenomeVersion] [-tgv toGenomeVersion]
-
+    -c  	Chromosome name, is number between 1 - 22 or x and y (by default 10)
+    -s  	Chromosome region start (by default 25000)
+    -e  	Chromosome region end (by default 30000)
+    -e  	Genome Version such as GRCh37 and GRCh38 (by default GRCh38)
+    -e  	Genome Version such as GRCh37 and GRCh38 (by default GRCh37)
+    --help / -h  for help
 # Example
 perl main.pm -c 1 -s 25000 -e 30000 -fgv GRCh38 -tgv GRCh37
+perl main.pm -c X -s 25000 -e 30000 
 
