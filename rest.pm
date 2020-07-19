@@ -37,7 +37,7 @@ HELP
   exit(0);
 } 
 
-my $domain = 'http://grch37.rest.ensembl.org';
+my $domain = 'http://rest.ensembl.org';
 my $path = "/map/human/$fromGenomeVersion/$chromosome:$start..$end/$toGenomeVersion?";
 
 
