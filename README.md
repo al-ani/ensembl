@@ -14,3 +14,11 @@ The code requires the Ensembl library are installed, as described in the install
     perl main.pm -c 1 -s 25000 -e 30000 -fgv GRCh38 -tgv GRCh37
     perl main.pm -c X -s 25000 -e 30000 
 
+
+
+# Alternatives
+"Requirement:" Required to install HTTP::Tiny and JSON library
+For HTTP::Tiny https://metacpan.org/pod/HTTP::Tiny
+For JSON https://metacpan.org/pod/JSON
+
+

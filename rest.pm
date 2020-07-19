@@ -37,16 +37,14 @@ HELP
   exit(0);
 } 
 
-my $http = HTTP::Tiny->new();
 my $domain = 'http://grch37.rest.ensembl.org';
 my $path = "/map/human/$fromGenomeVersion/$chromosome:$start..$end/$toGenomeVersion?";
 
 
-my $response = $http->get($domain.$path, {
+my $response = HTTP::Tiny->new()->get($domain.$path, {
   headers => { 'Content-type' => 'application/json' }
 });
-die "Connection Error\n" unless $response->{success};
- 
+die "Failed!\n" unless $response->{success};
 
 if(length $response->{content}) {
   local $hash = decode_json($response->{content});
